@@ -397,7 +397,7 @@ app.post('/api/documentosPorFecha', async (req, res) => {
     });
   } catch (error) {
     console.error('Error al consultar documentos por fechaAuditoria:', error);
-    res.status(500).json({ ok: false, msg: 'Error al consultar documentos' });
+    res.status(500).json({ ok: false, msg: 'Error al consultar documentos'+error });
   }
 });
 
@@ -472,7 +472,7 @@ ORDER BY
 });
 
 app.get('/api/getVersion', (req, res) => {
-  const version = "1.0.0"; // Define la versión aquí
+  const version = "1.0.1"; // Define la versión aquí
   res.json({ version });
 });
 
