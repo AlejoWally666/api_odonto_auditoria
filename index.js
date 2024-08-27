@@ -471,6 +471,11 @@ ORDER BY
   }
 });
 
+app.get('/api/getVersion', (req, res) => {
+  const version = "1.0.0"; // Define la versión aquí
+  res.json({ version });
+});
+
 const sanitizeValues = (values) => values.map(value => (value === undefined ? null : value));
 
 app.listen(port, () => {
